@@ -42,6 +42,9 @@ pub struct MovementController {
     /// Maximum speed in world units per second.
     /// 1 world unit = 1 pixel when using the default 2D camera and no physics engine.
     pub max_speed: f32,
+
+    /// The speed at which the character wants to rotate.
+    pub rotation_speed: f32,
 }
 
 impl Default for MovementController {
@@ -50,6 +53,8 @@ impl Default for MovementController {
             intent: Vec2::ZERO,
             // 400 pixels per second is a nice default, but we can still vary this per character.
             max_speed: 400.0,
+            // rotation speed in radians per second
+            rotation_speed: 0.0,
         }
     }
 }
