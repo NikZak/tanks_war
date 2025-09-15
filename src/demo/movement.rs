@@ -54,7 +54,7 @@ impl Default for MovementController {
             // 400 pixels per second is a nice default, but we can still vary this per character.
             max_speed: 400.0,
             // rotation speed in radians per second
-            rotation_speed: 0.0,
+            rotation_speed: f32::to_radians(360.0),
         }
     }
 }
