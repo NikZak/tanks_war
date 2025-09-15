@@ -65,8 +65,8 @@ fn apply_tank_movement(
 
         // Apply forward/backward movement based on current rotation
         if controller.forward_intent != 0.0 {
-            // Get the tank's forward direction (Y axis in local space)
-            let forward_direction = transform.rotation * Vec3::Y;
+            // Get the tank's forward direction (X axis in local space since sprite is rotated 90 degrees)
+            let forward_direction = transform.rotation * Vec3::X;
             let movement_distance =
                 controller.forward_intent * controller.max_speed * time.delta_secs();
             let translation_delta = forward_direction * movement_distance;
